@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEYRA | Discover Your Style</title>
+  <meta name="description" content="Discover timeless fashion at VEYRA. Shop western, ethnic, party and casual wear.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announcement">
+    Complimentary shipping on orders above ₹1,999
+  </div>
+
+  <header class="header">
+    <button class="menu-button" id="menuToggle" aria-label="Open menu">☰</button>
+    <a href="#" class="logo">VEYRA<span>.</span></a>
+
+    <nav class="nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#shop" data-nav-category="all">Shop All</a>
+      <a href="#shop" data-nav-category="western">Western</a>
+      <a href="#shop" data-nav-category="ethnic">Ethnic</a>
+      <a href="#shop" data-nav-category="party">Party Wear</a>
+      <a href="#shop" data-nav-category="casual">Casual</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" id="searchToggle" aria-label="Search">⌕</button>
+      <button class="icon-button" id="accountButton" aria-label="Account">♙</button>
+      <button class="icon-button" id="wishlistButton" aria-label="Wishlist">♡ <span class="count" id="wishCount">0</span></button>
+      <button class="icon-button" id="cartButton" aria-label="Shopping bag">♧ <span class="count" id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <div class="search-row" id="searchRow">
+    <input type="search" id="searchInput" placeholder="Search dresses, tops, kurtas...">
+    <button class="dark-button" id="searchButton">Search</button>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">THE NEW SEASON COLLECTION</p>
+        <h1>Style that feels<br><em>like you.</em></h1>
+        <p class="hero-description">Thoughtfully curated pieces for every version of you. Discover your next favourite look.</p>
+        <a href="#shop" class="dark-button hero-button">EXPLORE COLLECTION <span>→</span></a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1100&q=85" alt="Women's fashion collection">
+        <div class="hero-note">EFFORTLESSLY<br>ELEGANT.</div>
+      </div>
+      <div class="hero-number">01 / 04</div>
+    </section>
+
+    <section class="category-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR LOOK</p>
+          <h2>Shop by category</h2>
+        </div>
+        <a href="#shop" class="text-link">View everything →</a>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card" data-collection="western">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&q=85" alt="Western fashion">
+          <span>Western</span>
+        </button>
+        <button class="category-card" data-collection="ethnic">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700&q=85" alt="Ethnic fashion">
+          <span>Ethnic</span>
+        </button>
+        <button class="category-card" data-collection="party">
+          <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=700&q=85" alt="Party fashion">
+          <span>Party Wear</span>
+        </button>
+        <button class="category-card" data-collection="casual">
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=700&q=85" alt="Casual fashion">
+          <span>Casual</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading shop-heading">
+        <div>
+          <p class="eyebrow">CURATED FOR YOU</p>
+          <h2>Our collection</h2>
+          <p class="muted" id="productCount">Discover your next favourite piece.</p>
+        </div>
+        <button class="text-link" id="clearFilters">Clear filters ×</button>
+      </div>
+
+      <div class="filter-bar">
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="all">All categories</option>
+          <option value="western">Western</option>
+          <option value="ethnic">Ethnic</option>
+          <option value="party">Party wear</option>
+          <option value="casual">Casual</option>
+        </select>
+
+        <select id="sizeFilter" aria-label="Filter by size">
+          <option value="all">All sizes</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+        </select>
+
+        <select id="priceFilter" aria-label="Filter by price">
+          <option value="all">All prices</option>
+          <option value="under1000">Under ₹1,000</option>
+          <option value="1000-2000">₹1,000 – ₹2,000</option>
+          <option value="2000-3000">₹2,000 – ₹3,000</option>
+          <option value="above3000">Above ₹3,000</option>
+        </select>
+
+        <select id="sortFilter" aria-label="Sort products">
+          <option value="default">Sort: Featured</option>
+          <option value="low">Price: Low to high</option>
+          <option value="high">Price: High to low</option>
+          <option value="newest">Newest first</option>
+        </select>
+      </div>
+
+      <div class="active-category" id="activeCategory">ALL PRODUCTS</div>
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="empty-state" id="emptyProducts" hidden>
+        <h3>No pieces found</h3>
+        <p>Try changing your search or filters.</p>
+        <button class="dark-button" id="emptyReset">Clear filters</button>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <p class="eyebrow">THE VEYRA PHILOSOPHY</p>
+      <h2>"Fashion fades.<br><em>Style is yours to create."</em></h2>
+      <p>Wear what makes you feel confident. Every single day.</p>
+    </section>
+
+    <section class="newsletter">
+      <div>
+        <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+        <h2>Stay in the style loop.</h2>
+        <p>Be the first to know about new arrivals and exclusive offers.</p>
+      </div>
+      <form id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+        <button type="submit">SUBSCRIBE →</button>
+        <p id="newsletterMessage" class="form-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div>
+        <a href="#" class="logo footer-logo">VEYRA<span>.</span></a>
+        <p>Fashion that speaks your language.<br>Confidence in every thread.</p>
+      </div>
+      <div>
+        <h4>EXPLORE</h4>
+        <a href="#shop">Shop all</a>
+        <a href="#shop" data-nav-category="western">Western wear</a>
+        <a href="#shop" data-nav-category="ethnic">Ethnic wear</a>
+        <a href="#shop" data-nav-category="party">Party wear</a>
+      </div>
+      <div>
+        <h4>HELP</h4>
+        <a href="#shop">Shopping</a>
+        <a href="#shop">Size guide</a>
+        <a href="#shop">Contact us</a>
+        <a href="#home">About VEYRA</a>
+      </div>
+      <div>
+        <h4>FOLLOW OUR JOURNEY</h4>
+        <p>New looks. Fresh stories. More you.</p>
+        <button class="admin-access" id="adminAccess">Admin login</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="copyright"></span> VEYRA. All rights reserved.</span>
+      <span>Made with style. ♡</span>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Admin panel -->
+  <section class="admin-section" id="adminSection" hidden>
+    <div class="admin-header">
+      <div>
+        <p class="eyebrow">VEYRA MANAGEMENT</p>
+        <h2>Admin dashboard</h2>
+      </div>
+      <button class="outline-button" id="closeAdmin">Close dashboard</button>
+    </div>
+
+    <div class="admin-stats">
+      <div><span>Total products</span><strong id="adminProductCount">0</strong></div>
+      <div><span>Total stock</span><strong id="adminStockCount">0</strong></div>
+      <div><span>Total orders</span><strong id="adminOrderCount">0</strong></div>
+      <div><span>Order value</span><strong id="adminRevenue">₹0</strong></div>
+    </div>
+
+    <div class="admin-layout">
+      <div class="admin-form-panel">
+        <h3 id="adminFormTitle">Add a product</h3>
+        <form id="productForm">
+          <input type="hidden" id="editProductId">
+          <label>Product name<input type="text" id="adminName" required></label>
+          <label>Category
+            <select id="adminCategory" required>
+              <option value="western">Western</option>
+              <option value="ethnic">Ethnic</option>
+              <option value="party">Party</option>
+              <option value="casual">Casual</option>
+            </select>
+          </label>
+          <label>Price (₹)<input type="number" id="adminPrice" min="1" required></label>
+          <label>Stock quantity<input type="number" id="adminStock" min="0" required></label>
+          <label>Sizes (comma separated)<input type="text" id="adminSizes" placeholder="S, M, L, XL" required></label>
+          <label>Colours<input type="text" id="adminColours" placeholder="Beige, Brown"></label>
+          <label>Image URL<input type="url" id="adminImage" placeholder="https://..."></label>
+          <label>Description<textarea id="adminDescription" rows="3"></textarea></label>
+          <button class="dark-button full-button" id="adminSave" type="submit">Save product</button>
+          <button class="outline-button full-button" id="adminCancel" type="button">Cancel</button>
+        </form>
+      </div>
+
+      <div class="admin-list-panel">
+        <h3>Manage products</h3>
+        <div id="adminProductList"></div>
+        <h3 class="admin-orders-title">Recent orders</h3>
+        <div id="adminOrders"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
